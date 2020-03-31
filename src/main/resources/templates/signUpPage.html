@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+          crossorigin="anonymous" type="text/css">
+    <title>ثبت نام</title>
+</head>
+<body style="background-color: lavender">
+<div style="display: flex ; justify-content: center">
+    <div style="background-color: lightblue; width: 250px; height: 300px;
+         padding: 5px 20px 20px 20px; margin-top: 150px; border-radius: 5px; border: darkcyan solid thin">
+
+        <div style="display: flex; justify-content: center; height: 20%"><h3>ثبت نام</h3></div>
+        <form action="#" th:action="@{/user/signUp}" th:object="${user}" method="post">
+            <p>نام کاربری:* <input dir="ltr" type="text" th:field="*{username}"/></p>
+            <p>کلمه‌ی عبور:* <input dir="ltr" type="text" th:field="*{password}"/></p>
+            <select th:field="${user.role}">
+                <option th:each="role : ${roles}"
+                        th:value="${role.id}"
+                        th:text="${role.title}">select role
+                </option>
+            </select>
+            <br><br>
+            <div style="display: flex; justify-content: center">
+                <input style="width: 100%" type="submit" value="ثبت نام"/>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

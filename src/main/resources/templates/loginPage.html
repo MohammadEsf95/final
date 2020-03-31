@@ -1,0 +1,17 @@
+<body style="background-color: lavender" xmlns:th="http://www.w3.org/1999/xhtml">
+<div style="display: flex ; justify-content: center;">
+    <div style="background-color: lightblue; width: 250px; height: 250px;
+         padding: 5px 20px 20px 20px; margin-top: 150px; border-radius: 5px; border: darkcyan solid thin">
+
+        <div style="display: flex; justify-content: center; height: 20%"><h3>ورود</h3></div>
+        <form action="#" th:action="@{/user/login}" th:object="${user}" method="post">
+            <p>نام کاربری:* <input dir="ltr" type="text" th:field="*{username}"/></p>
+            <p>کلمه‌ی عبور:* <input dir="ltr" type="text" th:field="*{password}"/></p><br>
+            <div style="display: flex; justify-content: center">
+                <input style="width: 100%" type="submit" value="ورود"/>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
